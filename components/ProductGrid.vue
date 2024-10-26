@@ -1,5 +1,13 @@
 <template>
-    <div class="product-grid-container">
+
+    <div>
+    <!-- Pantalla de carga con spinner -->
+    <div v-if="loading" class="loading-screen">
+      <div class="spinner"></div>
+      <p>Loading...</p> <!-- Mensaje opcional -->
+    </div>
+
+    <div v-else class="product-grid-container">
         <Navbar :showFourImages="showFourImages" :toggleImages="toggleImages" />
 
         <div :class="{'product-grid': true, 'grid-4': showFourImages, 'grid-2': !showFourImages}">
@@ -21,8 +29,8 @@
         <LoadMoreButton :canLoadMore="canLoadMore" @loadMore="loadMore" />
 
     </div>
+</div>
 </template>
-
 
 
 
@@ -32,6 +40,8 @@
     import Navbar from '~/components/Navbar.vue';
     import { useYachts } from '~/composables/useYachts';
     import LoadMoreButton from './LoadMoreButton.vue';
+
+    const loading = ref<boolean>(true);
 
     // Usamos el composable para gestionar los productos
     const {
@@ -45,13 +55,50 @@
     } = useYachts();
 
     // Llamamos a fetchYachts cuando se monta el componente
-    onMounted(() => {
-    fetchYachts();
+    onMounted(async() => {
+    await fetchYachts();
+    loading.value = false; // Cambia a false cuando los datos estén cargados
     });
+
 </script>
 
 
 <style scoped>
+
+    /* Estilo para el spinner de carga a pantalla completa */
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white; /* Fondo blanco */
+  z-index: 9999; /* que esté por encima del contenido */
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 6px solid #ccc;
+  border-top: 6px solid #333;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+
+
+
+
 
 
     .product-grid {

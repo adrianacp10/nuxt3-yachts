@@ -2,7 +2,7 @@
     <div class="navbar">
       <p class="title">YACHTS FOR SALE</p>
       <div class="buttons-container">
-        <p>VIEW |</p>
+        <p>View |</p>
         <button @click="setView(true)" class="image-toggle-button" :class="{ active: showFourImages }">
           <img :src="showFourImages ? iconGrid4Relleno : iconGrid" alt="Show 4 Images" class="icon" />
         </button>
