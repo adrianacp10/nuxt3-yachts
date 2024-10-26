@@ -1,0 +1,16 @@
+@font-face {
+    font-family: 'FrankRuhLibre-Regular';
+    src: url('../fonts/FrankRuhlLibre-Regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'UrbanGroteskMeRegular';
+    src:url('../fonts/UrbanGroteskMeBl-Regular.woff2') format('woff2');
+
+}
+
+@font-face {
+    font-family: 'UrbanGroteskReBoRegular';
+    src:url('../fonts/UrbanGroteskReBo-Regular.woff2') format('woff2');
+
+}
