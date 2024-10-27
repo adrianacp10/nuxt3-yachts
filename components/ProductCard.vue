@@ -22,7 +22,6 @@
 
 <script setup lang="ts">
 import { defineProps } from 'vue';
-import type { Yacht } from '~/types/typesYatchs';
 import EnquiryButton from "./EnquiryButton.vue";
 import SavedIcon from '@/assets/icons/marcador.png';
 

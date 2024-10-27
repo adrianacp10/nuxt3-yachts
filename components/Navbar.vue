@@ -25,13 +25,15 @@
   // Definimos las propiedades que recibirá el componente
   const props = defineProps<{
   showFourImages: boolean;
-  toggleImages: () => void; // Ya no se usa directamente
-  }>();
+  toggleImages: (isFourImages: boolean) => void; // Cambiar aquí para aceptar el parámetro
+}>();
 
   // Función para establecer la vista según el botón clicado
   const setView = (isFourImages: boolean) => {
-  props.toggleImages(); // Llama al método para alternar imágenes
-  };
+  if (props.showFourImages !== isFourImages) {
+    props.toggleImages(isFourImages); // Pasar el valor deseado
+  }
+};
 
   </script>
   

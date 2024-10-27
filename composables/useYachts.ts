@@ -16,10 +16,10 @@ export function useYachts() {
     });
 
     // Toggle para alternar la cantidad de imágenes
-    const toggleImages = () => {
-    showFourImages.value = !showFourImages.value;
-    };
-
+    const toggleImages = (isFourImages?: boolean) => {
+        showFourImages.value = isFourImages !== undefined ? isFourImages : !showFourImages.value;
+      };
+      
     const loadMore = async () => {
         if (currentPage.value < totalPages.value) {
             currentPage.value += 1; // Incrementar la página actual antes de la llamada

@@ -4,7 +4,7 @@
     <!-- Pantalla de carga con spinner -->
     <div v-if="loading" class="loading-screen">
       <div class="spinner"></div>
-      <p>Loading...</p> <!-- Mensaje opcional -->
+      <p class="loading">Loading...</p> <!-- Mensaje opcional -->
     </div>
 
     <div v-else class="product-grid-container">
@@ -87,6 +87,10 @@
   border-top: 6px solid #333;
   border-radius: 50%;
   animation: spin 1s linear infinite;
+}
+
+.loading{
+    font-family: 'UrbanGroteskMeRegular';
 }
 
 @keyframes spin {

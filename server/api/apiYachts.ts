@@ -1,11 +1,11 @@
 import { defineEventHandler } from "h3";
-import { ApiResponse, Yacht } from "~/types/typesYatchs" // Importa tus interfaces
+import { ApiResponse, Yacht } from "~/types/typesYatchs" 
 
 
 export default defineEventHandler (async (event) => {
 
     try {
-        // Extraer los parámetros de consulta (como `page`) desde el frontend
+        // Extraer los parámetros de consulta
         const query = getQuery(event);
 
 
