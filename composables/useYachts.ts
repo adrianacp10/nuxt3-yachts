@@ -50,14 +50,14 @@ export function useYachts() {
             //console.log('Estructura de respuesta:', JSON.stringify(data, null, 2));
 
             // Esto verifica que la meta indique la página correcta y las páginas totales
-            console.log('Meta información:', data.meta);
+            //console.log('Meta información:', data.meta);
 
             // Validamos que data sea un objeto y que data.data sea un array
             if (data && typeof data === 'object' && Array.isArray(data.data)) {
-                console.log(`Yates recibidos de la página ${page}:`, data.data.map((yacht: Yacht) => yacht.name));
+                //console.log(`Yates recibidos de la página ${page}:`, data.data.map((yacht: Yacht) => yacht.name));
                 // Concatenar los productos nuevos en lugar de sobrescribirlos
                 products.value = [...products.value, ...data.data]; 
-                console.log('Todos los productos cargados hasta ahora:', products.value.map((yacht: Yacht) => yacht.name));
+                //console.log('Todos los productos cargados hasta ahora:', products.value.map((yacht: Yacht) => yacht.name));
 
                 // Esto es para actualizar el total de páginas desde la respuesta de la API
                 if (data.meta && data.meta.totalPages) {
