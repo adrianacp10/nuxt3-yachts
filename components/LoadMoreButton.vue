@@ -7,7 +7,7 @@
 </template>
 
 <script setup lang="ts">
-const props = defineProps({
+const { canLoadMore } = defineProps({
   canLoadMore: {
     type: Boolean,
     required: true
@@ -21,7 +21,7 @@ const props = defineProps({
   display:flex;
   justify-content: center;
   align-items: center;
-  margin-bottom:40px;
+  margin-bottom: 40px;
 }
 
 button {
@@ -41,4 +41,5 @@ button:disabled {
 button:hover:not(:disabled) {
   background-color: rgba(128, 128, 128, 0.142);
 }
+
 </style>

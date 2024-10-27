@@ -1,5 +1,5 @@
 import { ref, computed } from 'vue';
-import type { Yacht, ApiResponse } from '~/types/typesYatchs';
+import type { Yacht } from '~/types/typesYatchs';
 
 export function useYachts() {
 
@@ -32,13 +32,13 @@ export function useYachts() {
     };
     
 
-
     // Computed para controlar si hay más productos que cargar
     const canLoadMore = computed(() => {
         console.log(`canLoadMore: ${currentPage.value < totalPages.value}`);
         return currentPage.value < totalPages.value;
     });
-
+    
+    //Llamada a la API
     const fetchYachts = async (page = 1) => {
         try {
             console.log(`Solicitando datos de la página: ${page}`);
@@ -74,7 +74,6 @@ export function useYachts() {
     };
 
     
-
     return {
         products,
         visibleProducts,

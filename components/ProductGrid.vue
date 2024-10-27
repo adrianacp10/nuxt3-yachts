@@ -65,7 +65,7 @@
 
 <style scoped>
 
-    /* Estilo para el spinner de carga a pantalla completa */
+/* Estilo para el spinner de carga a pantalla completa */
 .loading-screen {
   position: fixed;
   top: 0;
@@ -99,20 +99,14 @@
 }
 
 
-
-
-
-
-
-
-    .product-grid {
-        display: grid;
-        width: 100%;
-        box-sizing: border-box;
-        gap: 3px; /* Espaciado entre los elementos */
-        padding: 10px; /* Espacio interno */
-        justify-items: center;
-    }
+.product-grid {
+    display: grid;
+    width: 100%;
+    box-sizing: border-box;
+    gap: 3px; /* Espaciado entre los elementos */
+    padding: 10px; /* Espacio interno */
+    justify-items: center;
+}
 
     /* Por defecto, se mostrarán 4 columnas */
     .grid-4 {
@@ -129,7 +123,7 @@
     /* Para 2 columnas, asegurando que no interfiera con móviles */
     @media (min-width: 601px) {
         .grid-2 {
-            grid-template-columns: repeat(2, 1fr); /* Dos columnas para pantallas más grandes */
+            grid-template-columns: repeat(2, 1fr); 
         }
     }
 </style>

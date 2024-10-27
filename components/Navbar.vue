@@ -25,13 +25,13 @@
   // Definimos las propiedades que recibirá el componente
   const props = defineProps<{
   showFourImages: boolean;
-  toggleImages: (isFourImages: boolean) => void; // Cambiar aquí para aceptar el parámetro
+  toggleImages: (isFourImages: boolean) => void; 
 }>();
 
   // Función para establecer la vista según el botón clicado
   const setView = (isFourImages: boolean) => {
   if (props.showFourImages !== isFourImages) {
-    props.toggleImages(isFourImages); // Pasar el valor deseado
+    props.toggleImages(isFourImages); 
   }
 };
 
@@ -44,7 +44,7 @@
     background-color: white;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px; /* Espaciado opcional */
+    margin-bottom: 20px; 
     font-family: 'UrbanGroteskReBoRegular';
     position: fixed;
     width: 100%;

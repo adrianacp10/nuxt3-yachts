@@ -35,7 +35,6 @@ const props = defineProps<{
     length: { meters: string};
 }>();
 
-
 </script>
 
 
@@ -56,19 +55,18 @@ const props = defineProps<{
 }
 
 
-
 /* Icono de guardado (hidden by default) */
 .saved-icon {
   position: absolute;
   top: 10px;
   right: 10px;
-  width: 24px; /* Ajusta el tamaño del icono */
+  width: 24px;
   height: 24px;
   opacity: 0;
   transition: opacity 0.3s ease;
 }
 
-/* Mostrar icono de guardado al hacer hover sobre la tarjeta */
+/* Icono de guardado al hacer hover sobre la tarjeta */
 .product-card:hover .saved-icon {
   opacity: 1;
 }
